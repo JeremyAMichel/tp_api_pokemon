@@ -1,0 +1,84 @@
+.types{
+    display: flex;
+    gap: 5px;
+}
+
+.type{
+    width: 45px;
+    text-align: center;
+    border-radius: 2px;
+    padding: 2px;
+}
+
+.pokemons{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2em;
+    /* justify-content: space-between; */
+}
+
+.logo{
+    background-color: #dadada;
+}
+
+.pokemon{
+    max-width: 100px;
+}
+
+h3{
+    font-size: 10px;
+    color: #a8a8a8;
+}
+
+h2{
+    font-size: 18px;
+}
+
+h4{
+    font-size: 12px;
+}
+
+.grass{
+    background-color: #9BCC50;
+}
+
+.poison{
+    color: white;
+    background-color: #B97FC9;
+}
+
+.fire{
+    color: white;
+    background-color: #FD7D24;
+}
+
+.flying{
+    background-color: #3DC7EF;
+}
+
+.water{
+    color: white;
+    background-color: #4592C4;
+}
+
+.bug{
+    color: white;
+    background-color: #729F3F;
+}
+
+.normal{
+    background-color: #a4acaf;
+}
+
+.electric{
+    background-color: #eed535;
+}
+
+.ground{
+    
+    background: -webkit-linear-gradient(180deg, #f7de3f 50%, #ab9842 50%);
+    background: linear-gradient(180deg, #f7de3f 50%, #ab9842 50%);
+    background-color: #f7de3f;
+    color: #212121;
+}
+
