@@ -14,7 +14,6 @@ include('header.php');
 foreach ($items as $poke){
 
     include 'pokemon_display.php';
-    // print_r($poke);
 
 ?>
 </div>

@@ -13,6 +13,8 @@ class Pokemon
 
     private array $types;
 
+    private int $id;
+
     /**
      * Item constructor.
      * @param string $name
@@ -21,15 +23,23 @@ class Pokemon
      * @param int $order
      * @param array $types
      */
-    public function __construct(string $name, string $logo, string $imgOff, int $order, array $types)
+    public function __construct(string $name, string $logo, string $imgOff, int $order, array $types, int $i)
     {
         $this->name = $name;
         $this->logo = $logo;
         $this->imgOff = $imgOff;
         $this->order = $order;
         $this->types = $types;
+        $this->id = $i;
     }
 
+    /**
+     * Get the value of types
+     */ 
+    public function getId()
+    {
+        return $this->id;
+    }
 
     /**
      * Get the value of types
