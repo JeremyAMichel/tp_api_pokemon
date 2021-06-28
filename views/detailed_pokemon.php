@@ -11,6 +11,7 @@ include('header.php');
 
 <?php 
 
+include('detailed_pokemon_pagination.php');
 include('detailed_pokemon_display.php');
 
 ?>

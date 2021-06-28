@@ -2,6 +2,8 @@
 
 include_once 'pokemon.php';
 include_once 'type.php';
+include_once 'stat.php';
+include_once 'ability.php';
 
 
 
@@ -39,7 +41,7 @@ class PokemonsRepository
     }
 
     public function findPokemonsFromApi():void{
-        $file = 'https://pokeapi.co/api/v2/pokemon/?offset=0&limit=20';
+        $file = 'https://pokeapi.co/api/v2/pokemon/?offset=0&limit=10';
         $data = file_get_contents($file);
         $arrayJson = json_decode($data);
         $officialArtwork = 'official-artwork';
@@ -54,16 +56,43 @@ class PokemonsRepository
                 $types[] = new Type($jsonPokemon->types[1]->type->name,
                 '../img/type-'.$jsonPokemon->types[1]->type->name.'.png');
             }
+            
+            foreach($jsonPokemon->stats as $stat){
+                $stats[] = new Stats($stat->stat->name, $stat->base_stat);
+            }
+
+            foreach($jsonPokemon->abilities as $ability){
+                $data2= file_get_contents($ability->ability->url);
+                $jsonDescriptionAbility= json_decode($data2);
+                foreach($jsonDescriptionAbility->effect_entries as $entry){
+                    if($entry->language->name === 'en'){
+                        $abilityDescription=$entry->effect;
+                    }
+                }
+                $abilities[] = new Ability($ability->ability->name,$ability->is_hidden,$abilityDescription);
+            }
+
+            // $data2= file_get_contents($jsonPokemon->species->url);
+            // $jsonSpecies=json_decode($data2);
+            // $description=$jsonSpecies->flavor_text_entries[91]->flavor_text;
+
             $this->items[$i] = new Pokemon(
                 $jsonPokemon->name,
                 $jsonPokemon->sprites->front_default,
                 $jsonPokemon->sprites->other->$officialArtwork->front_default,
                 $jsonPokemon->order,
                 $types,
-                $i
+                $i,
+                $stats,
+                $jsonPokemon->weight,
+                $jsonPokemon->height,
+                $abilities,
+                // $description
             );
             $i++;
             $types=[];
+            $stats=[];
+            $abilities=[];
         }            
     }
 

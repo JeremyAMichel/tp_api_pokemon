@@ -6,7 +6,7 @@
     <a href="detailed_pokemon.php?id=<?= $poke->getId() ?>" class="card">
     <img class="logo" src="<?php echo $poke->getLogo() ?>" height="100px" width="100px">
     <div class="content">
-        <h3>No.<?php echo $poke->getOrder() ?></h3>
+        <h3 class="lil-order">No.<?php echo $poke->getOrder() ?></h3>
         <h2 class="pokeFont"><?php echo $poke->getName() ?></h2>
         <div class="types">
             <img src="<?php echo $poke->getTypes()[0]->getLink() ?>" alt="<?php echo $poke->getTypes()[0]->getName() ?>.png" height="auto" width="40px">
