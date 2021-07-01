@@ -402,3 +402,24 @@ p{
 		transform: rotate(0deg)
 	}
 }
+
+.btn-perso1{
+	height: 50px;
+	padding-top: 10px;
+}
+
+.whiteConn{
+	color: white;
+	font-family: "Flexo-Bold",arial,sans-serif;
+	font-size: 14px;
+	margin-left: 1em;
+}
+
+.font{
+	font-family: "Flexo-Bold",arial,sans-serif;
+}
+
+
+.larger-btn{
+	width: 120px;
+}

@@ -1,6 +1,14 @@
 <div class="pokemon-detailed flex">
 
     <div class="detailed-information">
+        <div class="flex">
+            <div>
+                <h3 class="detailed-stat-title">Taille :</h3>
+                <p><?php echo $pokemon->getHeight() ?></p>
+            </div>
+            <!-- mettre dans cette div le poids d'un pokemon -->
+            <div></div>
+        </div>
 
     </div>
     <div class="detailed-img">
